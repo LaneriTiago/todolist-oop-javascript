@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>To do List - OOP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div id="main-container">
+        <div id="add-container">
+            <h2>Adicione suas tarefas:</h2>
+            <form action="">
+                <input type="text" name="task" id="task" placeholder="O que você tem para fazer?">
+                <button type="submit" id="add"><i class="fa fa-plus"></i></button>
+            </form>
+            <div id="tasks-container">
+                <h2>Veja suas tarefas:</h2>
+                <div class="task">
+                    <i class="fa fa-check"></i>
+                    <span class="task-title">Título da tarefa</span>
+                    <i class="fa fa-trash hide" id="trash"></i>
+                </div>
+                <p id="empty-tasks">Não há tarefas cadastradas.</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
