@@ -23,6 +23,7 @@ h2 {
     margin-right: auto;
     padding: 30px;
     margin-top: 5vh;
+    border-radius: 10px;
 }
 /* add container */
 #add-container {
