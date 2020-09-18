@@ -55,6 +55,7 @@ addBtn.addEventListener ('click', function (evt) {
     if (taskText.value !== '') {
         todo.addTask (taskText.value)
     }
+
     
     /* limpa input */
     taskText.value = ''
