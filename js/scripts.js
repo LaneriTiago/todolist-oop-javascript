@@ -52,11 +52,13 @@ addBtn.addEventListener ('click', function (evt) {
     evt.preventDefault()
 
     let taskText = document.querySelector('#task');
-    if (taskText.value !== '') {
+
+    
+
+    if (taskText.value != '') {
         todo.addTask (taskText.value)
     }
 
-    
-    /* limpa input */
-    taskText.value = ''
+    taskText.value = '';
+
 })
