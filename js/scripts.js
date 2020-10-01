@@ -1,37 +1,46 @@
 class Todo {
     constructor () {
-        this.totaltasks = document.querySelectorAll ('.task').length
+        this.totaltasks = document.querySelectorAll('#task-result').length
     }
 
     addTask(taskText) {
             
-            let template = document.querySelector('.task').cloneNode (true);
-            template.classList.remove('hide');
+            let template = document.querySelector('#task-result').cloneNode (true); // cria novo template
+            template.classList.remove('hide'); // remove a classe hide
             
-            let templateText = template.querySelector('.task-title');
+            let templateText = template.querySelector('.task-title'); // manipular texto
             templateText.textContent = taskText;
 
             let list = document.querySelector ('#tasks-container');
 
             list.appendChild(template)
 
-            this.addEvents ()
+            this.addEvents() // adiciona evento as tasks
+
+            this.checkTasks ('add')
         
     }
 
     removeTask (task) {
-        console.log ('deu certo')
+        //achar o elemento pai
+        let parentEl = task.parentElement;
+        //remover da lista
+        parentEl.remove()
+
+        this.checkTasks ('remove')
     }
 
-    completeTask () {
-        
+    completeTask (task) {
+        //adiciona a classe de done
+        task.classList.add('done')
     }
 
-    addEvents () {
-        let removeBtns = document.querySelector ('#trash')
-        let removeBtn = removeBtns[removeBtns.length -1]
-        let doneBtns = document.querySelector ('#check')
-        let doneBtn = removeBtns[doneBtns.length -1];
+
+    addEvents() {
+        let removeBtns = document.querySelectorAll ('#trash')
+        let removeBtn = removeBtns[removeBtns.length - 1]
+        let doneBtns = document.querySelectorAll ('#check')
+        let doneBtn = doneBtns[doneBtns.length -1];
         
         removeBtn.addEventListener ('click', function () {
             todo.removeTask (this)
@@ -41,6 +50,24 @@ class Todo {
             todo.completeTask (this)
         })
 
+    }
+
+    checkTasks (command) {
+
+        let msg = document.querySelector('#empty-tasks')
+        // adicionar ou remover tasks
+        if (command === 'add') {
+            this.totaltasks += 1;
+        } else if (command === 'remove') {
+            this.totaltasks -= 1
+        }
+
+        // checa se tem mais de uma task e adiciona ou remove a classe
+        if (this.totalTasks === 1) {
+            msg.classList.remove('hide')
+        } else {
+            msg.classList.add('hide')
+        }
     }
 }
 

@@ -72,7 +72,7 @@ h2 {
 }
 
 #trash {
-    display: none
+    display: none;
 }
 
 .task:hover #trash {
