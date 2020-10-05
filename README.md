@@ -1,1 +1,2 @@
-<img src="app-print.png"></img>
+<img src="app-print.png">
+</img>
